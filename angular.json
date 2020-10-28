@@ -27,7 +27,17 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "allowedCommonJsDependencies": [
+              "bootstrap",
+              "@boldreports/javascript-reporting-controls/Scripts/bold.report-viewer.min",
+              "@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.bulletgraph.min",
+              "@boldreports/javascript-reporting-controls/Scripts/data-visualization/ej.chart.min",
+              "@boldreports/javascript-reporting-controls/Scripts/bold.report-designer.min",
+              "codemirror/addon/hint/show-hint",
+              "codemirror/addon/hint/sql-hint",
+              "codemirror/mode/sql/sql",
+              "codemirror/mode/vb/vb"
+            ]
           },
           "configurations": {
             "production": {
@@ -49,8 +59,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "12mb"
                 }
               ]
             }
@@ -134,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "reports-sample"
+  "defaultProject": "reports-cli"
 }
