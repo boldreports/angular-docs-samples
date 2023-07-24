@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import * as data from './../samples.json';
+import samples from './../samples.json';
+const data = samples;
 
 @Component({
   selector: 'ej-sidebar',

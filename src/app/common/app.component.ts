@@ -3,8 +3,8 @@ import { Router, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Title, Meta } from '@angular/platform-browser';
 import { SideBarComponent } from './sidebar/sidebar.component';
-import * as data from './samples.json';
-
+import samples from './samples.json';
+const data = samples;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -83,9 +83,12 @@ export class AppComponent implements OnInit {
       document.body.appendChild(style);
     }
     style.textContent = `ej-sample{
-      display:block;
+      display: block;
       overflow: hidden;
-      height: ${window.innerHeight}px
+      height: 100%
+    }
+    .e-reportdesigner-designer {
+      display: inline-block;
     }`;
   }
 
