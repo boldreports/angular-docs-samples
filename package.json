@@ -22,7 +22,7 @@
     "@boldreports/javascript-reporting-controls": "*",
     "@boldreports/types": "*",
     "bootstrap": "4.3.1",
-    "codemirror": "5.45.0",
+    "codemirror": "5.58.2",
     "core-js": "2.5.4",
     "jquery": "3.6.0",
     "rxjs": "6.6.0",
