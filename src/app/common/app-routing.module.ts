@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: '**', redirectTo: 'report-viewer/getting-started' }
 ];
 
-@NgModule({ 
+@NgModule({
   declarations: components,
   imports: [
     BrowserModule,
