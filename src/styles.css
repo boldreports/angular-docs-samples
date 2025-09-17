@@ -1,8 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* Reports */
-@import './../node_modules/@boldreports/javascript-reporting-controls/Content/material/bold.reports.all.min.css';
-@import './../node_modules/@boldreports/javascript-reporting-controls/Content/material/bold.reportdesigner.min.css';
+@import './../node_modules/@boldreports/javascript-reporting-controls/Content/v2.0/tailwind-light/bold.report-viewer.min.css';
+@import './../node_modules/@boldreports/javascript-reporting-controls/Content/v2.0/tailwind-light/bold.report-designer.min.css';
 
 /* code-mirror */
 @import './../node_modules/codemirror/lib/codemirror.css';
