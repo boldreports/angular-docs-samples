@@ -8,7 +8,8 @@ const data = samples;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
 export class AppComponent implements OnInit {
   tocSlideLeft = false;
@@ -69,7 +70,7 @@ export class AppComponent implements OnInit {
     this.onHamBurgerClick();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize(): void {
     this.setReportsHeight();
     this.updateOverlay();
