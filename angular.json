@@ -16,21 +16,29 @@
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/scripts/"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js"
+            ],
             "allowedCommonJsDependencies": [
               "bootstrap",
+              "@boldreports/javascript-reporting-controls/Scripts/v2.0/common/bold.reports.common.min",
+              "@boldreports/javascript-reporting-controls/Scripts/v2.0/common/bold.reports.widgets.min",
+              "@boldreports/javascript-reporting-controls/Scripts/v2.0/bold.report-viewer.min",
+              "@boldreports/javascript-reporting-controls/Scripts/v2.0/bold.report-designer.min",
               "@boldreports/javascript-reporting-controls/Content/v2.0/tailwind-light/bold.report-viewer.min.css",
               "@boldreports/javascript-reporting-controls/Content/v2.0/tailwind-light/bold.report-designer.min.css",
+              "codemirror/lib/codemirror",
               "codemirror/addon/hint/show-hint",
               "codemirror/addon/hint/sql-hint",
               "codemirror/mode/sql/sql",
@@ -48,45 +56,49 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "10mb",
-                  "maximumError": "12mb"
+                  "maximumWarning": "30mb",
+                  "maximumError": "30mb"
                 }
               ]
+            },
+            "development": {
+              "outputHashing": "all"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-cli:build"
+            "buildTarget": "angular-cli:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-cli:build:production"
+              "buildTarget": "angular-cli:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-cli:build"
+            "buildTarget": "angular-cli:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.css"
@@ -102,8 +114,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
@@ -141,6 +153,5 @@
         }
       }
     }
-  },
-  "defaultProject": "reports-cli"
+  }
 }
